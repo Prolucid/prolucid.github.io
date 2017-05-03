@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+    <div class="tp-bgimg defaultimg" style="background-repeat: no-repeat; background-image: url('/assets/img/top.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;">
+        {% include header.html %}
+
+        <main class="page-content" aria-label="Content">
+        <div class="wrapper" style="min-height: 600px">
+            {{ content }}
+        </div>
+        </main>
+    </div>
+    {% include footer.html %}
+
+  </body>
+
+</html>

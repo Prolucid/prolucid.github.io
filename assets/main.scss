@@ -1,0 +1,53 @@
+---
+---
+
+@import "minima";
+
+h1,h2,h3,h4,h5,h6 .wrapper {
+    color: #FFFFFF;
+}
+
+.rss-subscribe {
+    font-family: "Helvetica";
+    font-size: 14px;
+    color: #828282;
+    text-align: right;
+}
+
+.home {
+    a {
+        color: #FFFFFF;
+    }
+    color: #FFFFFF;
+}
+
+
+.site-title, .site-title:visited {
+    color: #FFFFFF;
+    text-decoration: none!important;
+}
+
+.site-nav {
+    .page-link {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+}
+
+article {
+    li {
+        list-style-type: circle;
+    }
+    a, a:visited { 
+        color: #FFFFFF; 
+        font-weight: bold;
+    }
+    .post-title {
+        color: #FFFFFF;
+        text-align: right;
+    }
+    .post-content {
+        color: #FFFFFF;
+        font-weight: 300; 
+    }
+}
