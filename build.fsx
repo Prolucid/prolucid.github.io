@@ -1,8 +1,9 @@
 // --------------------------------------------------------------------------------------
 // FAKE build script
 // --------------------------------------------------------------------------------------
+#I @"packages/build/FAKE/tools"
+#r @"FakeLib.dll"
 
-#r @"packages/build/FAKE/tools/FakeLib.dll"
 open Fake
 open Fake.Git
 open Fake.AssemblyInfoFile
@@ -10,15 +11,7 @@ open Fake.ReleaseNotesHelper
 open Fake.UserInputHelper
 open System
 open System.IO
-#if MONO
-#else
-#load "packages/build/SourceLink.Fake/tools/Fake.fsx"
-open SourceLink
-#endif
 
-// The name of the project
-// (used by attributes in AssemblyInfo, name of a NuGet package and directory in 'src')
-let project = "prolucid"
 
 // Short summary of the project
 let description = "Prolucid tech portal"
@@ -37,7 +30,7 @@ let gitRaw = environVarOrDefault "gitRaw" "https://raw.githubusercontent.com/Pro
 
 
 Target "Clean" (fun _ ->
-    CleanDirs ["temp"; "bin"; "Site/output"]
+    CleanDirs ["temp"; "bin"; "site/output"]
 )
 
 // --------------------------------------------------------------------------------------
@@ -68,49 +61,45 @@ let executeFAKEWithOutput workingDirectory script fsiargs envArgs =
     exitCode
 
 // site
-let buildsiteTarget fsiargs target =
+let buildSiteTarget fsiargs target =
     trace (sprintf "Building site (%s), this could take some time, please wait..." target)
-    let exit = executeFAKEWithOutput "Site/tools" "generate.fsx" fsiargs ["target", target]
+    let exit = executeFAKEWithOutput "site/tools" "generate.fsx" fsiargs ["target", target]
     if exit <> 0 then
         failwith "generating site failed"
     ()
 
 
-let generateHelp' fail debug =
+let generateSite fail debug =
     let args =
         if debug then "--define:HELP"
         else "--define:RELEASE --define:HELP"
     try
-        buildsiteTarget args "Default"
-        traceImportant "Help generated"
+        buildSiteTarget args "Default"
+        traceImportant "Site generated"
     with
     | e when not fail ->
-        traceImportant "generating help site failed"
+        traceImportant "generating site failed"
 
-let generateHelp fail =
-    generateHelp' fail false
-
-Target "GenerateHelp" (fun _ ->
-    generateHelp true
-)
-
-Target "GenerateHelpDebug" (fun _ ->
-    generateHelp' true true
-)
 
 Target "KeepRunning" (fun _ ->
-    use watcher = !! "Site/content/**/*.*" |> WatchChanges (fun changes ->
-         generateHelp' true true
+    use watcher = !! "site/content/**/*.*" |> WatchChanges (fun changes ->
+         generateSite true true
     )
 
-    traceImportant "Waiting for help edits. Press any key to stop."
+    traceImportant "Waiting for site edits. Press any key to stop."
 
     System.Console.ReadKey() |> ignore
 
     watcher.Dispose()
 )
 
-Target "GenerateSite" DoNothing
+Target "GenerateSiteDebug" (fun _ ->
+    generateSite true true
+)
+
+Target "GenerateSite" (fun _ ->
+    generateSite true false
+)
 
 let createIndexFsx lang =
     let content = """(*** hide ***)
@@ -122,7 +111,7 @@ let createIndexFsx lang =
 =========================
 *)
 """
-    let targetDir = "Site/content" </> lang
+    let targetDir = "site/content" </> lang
     let targetFile = targetDir </> "index.fsx"
     ensureDirectory targetDir
     System.IO.File.WriteAllText(targetFile, System.String.Format(content, lang))
@@ -138,7 +127,7 @@ Target "AddLangSite" (fun _ ->
             failwithf "Language must be 2 or 3 characters (ex. 'de', 'fr', 'ja', 'gsw', etc.): %s" lang
 
         let templateFileName = "template.cshtml"
-        let templateDir = "Site/tools/templates"
+        let templateDir = "site/tools/templates"
         let langTemplateDir = templateDir </> lang
         let langTemplateFileName = langTemplateDir </> templateFileName
 
@@ -159,7 +148,7 @@ Target "ReleaseSite" (fun _ ->
     CleanDir tempSiteDir
     Repository.cloneSingleBranch "" (gitHome + "/" + gitName + ".git") "master" tempSiteDir
 
-    CopyRecursive "Site/output" tempSiteDir true |> tracefn "%A"
+    CopyRecursive "site/output" tempSiteDir true |> tracefn "%A"
     StageAll tempSiteDir
     Git.Commit.Commit tempSiteDir ("Update site")
     Branches.push tempSiteDir
@@ -177,10 +166,7 @@ Target "All" DoNothing
   ==> "All"
   =?> ("ReleaseSite",isLocalBuild)
 
-"GenerateHelp"
-  ==> "GenerateSite"
-
-"GenerateHelpDebug"
+"GenerateSiteDebug"
   ==> "KeepRunning"
 
 "Clean"

@@ -25,23 +25,24 @@
         <ul class="nav nav-pills pull-right">
           <li><a href="http://prolucid.ca">prolucid.ca</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Apache Storm in F#<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">F# backend<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="http://prolucid.github.io/FsShelter/" class="external">FsShelter</a></li>
-              <li><a href="http://prolucid.github.io/protoshell/" class="external">Protobuf multilang</a></li>
-              <li><a href="http://fsstorm.github.io/FsStrom/" class="external">FsStorm</a></li>
+              <li><a href="https://prolucid.github.io/FsCassy/" class="external">FsCassy for Apache Cassandra</a></li>
+              <li><a href="https://prolucid.github.io/FsShelter/" class="external">FsShelter for Apache Storm</a></li>
+              <li><a href="https://github.com/Prolucid/protoshell/" class="external">Protobuf multilang for Apache Storm</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Frontend with Fable<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="http://fable-elmish.github.io/elmish/" class="external">Elm-like architecure</a></li>
-              <li><a href="http://prolucid.github.io/fable-aether/" class="external">Lenses</a></li>
-              <li><a href="http://prolucid.github.io/fable-mqtt/" class="external">Mqtt</a></li>
-              <li><a href="http://prolucid.github.io/fable-import-signalr/" class="external">SignalR</a></li>
-              <li><a href="http://prolucid.github.io/fable-import-ws/" class="external">Websockets</a></li>
-              <li><a href="http://prolucid.github.io/fable-react-toolbox/" class="external">React toolbox</a></li>
-              <li><a href="http://prolucid.github.io/fable-import-momentjs/" class="external">Date and Time</a></li>
+              <li><a href="https://github.com/Prolucid/fable-aether/" class="external">Optics</a></li>
+              <li><a href="https://github.com/Prolucid/fable-mqtt/" class="external">Mqtt</a></li>
+              <li><a href="https://github.com/Prolucid/fable-import-signalr/" class="external">SignalR</a></li>
+              <li><a href="https://github.com/Prolucid/fable-import-ws/" class="external">Websockets</a></li>
+              <li><a href="https://github.com/Prolucid/fable-react-toolbox/" class="external">React toolbox</a></li>
+              <li><a href="https://github.com/Prolucid/fable-import-momentjs/" class="external">Date and Time</a></li>
+              <li><a href="https://github.com/Prolucid/fable-react-grid-system" class="external">Responsive Grid</a></li>
             </ul>
           </li>
           <li><a href="/#support">Training &amp; support</a></li>
@@ -49,7 +50,7 @@
         <h3 class="muted"><a href="@Root/index.html">@Properties["project-name"]</a></h3>
       </div>
       <hr />
-      <div class="row">
+      <div class="row" style="background-image: '@Root/img/top.jpg'">
         <div class="span9" id="main">
           @RenderBody()
         </div>
@@ -59,23 +60,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h3>About</h3>
+          <h4>Support</h4>
           <p>
-            This site is the portal for various Prolucid open-source contributions and is
-            maintained by <a href="https://twitter.com/prolucid">@prolucid</a>.
-          </p>
-          <ul>
-            <li>Report issues on <a href="http://github.com/Prolucid/prolucid.github.io">GitHub</a></li>
-          </ul>
-          <h3>Support</h3>
-          <p>
-            If you need professional support or training for any of the tech listed here,
-            get in touch with <a href="http://prolucid.ca">Prolucid</a>.
+            Please use github issues in the respective project repositories if you have a problem.
+            If you need commercial support or training for any of the tech listed here,
+            you can get in touch with <a href="http://prolucid.ca">Prolucid</a>.
           </p>
         </div>
         <div class="col-md-4">
-          <h3>About the F# language</h3>
-          <img src="/img/logos/fsharp.png" style="float:right;margin:0px 0px 20px 20px">
+          <h4>About the F# language</h4>
           <p>
             This site is built using the F# language, but
             it is not affiliated with F# Software Foundation.
@@ -83,6 +76,9 @@
           <ul>
             <li>Visit <a href="http://fsharp.org">F# web site</a> for more info</li>
             <li><a href="http://foundation.fsharp.org">Join and help</a> the foundation</li>
+          </ul>
+          <ul>
+            <li>Report site issues on <a href="http://github.com/Prolucid/prolucid.github.io">GitHub</a></li>
           </ul>
         </div>
       </div>
