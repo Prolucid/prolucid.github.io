@@ -6,10 +6,8 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   
-  <link rel='stylesheet' id='parent-style-css'  href='http://prolucid.ca/wp-content/themes/salient/style.css?ver=4.7.4' type='text/css' media='all' />
-  <link rel='stylesheet' id='rgs-css'  href='http://prolucid.ca/wp-content/themes/salient/css/rgs.css?ver=6.0.1' type='text/css' media='all' />
-  <link rel='stylesheet' id='main-styles-css'  href='http://prolucid.ca/wp-content/themes/salient-child/style.css?ver=7.0.7' type='text/css' media='all' />
   
+  <link rel="stylesheet" href="{{ "/assets/css/salient.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">

@@ -7,4 +7,4 @@ categories: meta
 
 Today we are going live with our technology hub Prolucid I/O.
 
-Here we'll share news and insights about the technologies we are maintaing and contributing to.
+Here we'll share news and insights about the technologies we are maintaing and contributing towards.

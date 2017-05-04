@@ -21,6 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://prolucid.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: prolucid
 github_username: prolucid
+google_analytics: UA-98519481-1
 
 # Build settings
 markdown: kramdown
