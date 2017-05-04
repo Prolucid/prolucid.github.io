@@ -18,6 +18,8 @@ h1,h2,h3,h4,h5,h6 .wrapper {
     a {
         color: #FFFFFF;
     }
+    padding: 15px;
+    background-color: rgba(black, 0.3);
     color: #FFFFFF;
 }
 
@@ -35,6 +37,7 @@ h1,h2,h3,h4,h5,h6 .wrapper {
 }
 
 article {
+    background-color: rgba(black, 0.3);
     li {
         list-style-type: circle;
     }
@@ -50,6 +53,7 @@ article {
         color: #FFFFFF;
         font-weight: 300; 
     }
+    padding: 15px;
 }
 
 .img-thumbnail {
