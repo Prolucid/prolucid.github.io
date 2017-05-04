@@ -15943,7 +15943,6 @@ article.post .more-link span:hover, .blog-recent .more-link span:hover {
 }
 
 article.post .post-meta {
-	position: absolute;
 	left: 0px;
 	top: 0px;	
 }

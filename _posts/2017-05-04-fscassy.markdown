@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Functional F# API for Cassandra"
+date:   2017-05-03 10:15:21 -0400
+categories: meta
+---
+
+As part of ongoing effort to open-source our technology stack, Yesterday we released first beta of FsCassy - functional F# API for accessing Cassandra database.
+
+The library is a result of 2 years of working with Cassandra from F&#35; and it reflects the needs we have identified:
+
+- support for F&#35; quotations in update expressions
+- unit-testable consumers (the implementation needs to be pluggable)
+- composable API (adding a new option to the query should have minimal impact on consumers)
+- offer a fallback via prepared statements
+
+This is our second stab at the problem, and while the original interface-based DAL worked quite well it wasn't composable and was less than ideal in terms of testability.
+
+Please [check it out](https://prolucid.github.io/FsCassy) and let us know what you think!
