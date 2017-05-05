@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Functional F# API for Cassandra"
-date:   2017-05-03 10:15:21 -0400
-categories: meta
+date:   2017-05-04 10:15:21 -0400
+categories: F# cassandra
 ---
 
 As part of ongoing effort to open-source our technology stack, Yesterday we released first beta of FsCassy - functional F# API for accessing Cassandra database.

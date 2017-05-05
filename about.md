@@ -15,13 +15,12 @@ Most of the Cloud code we write is in F#, and while we're not affiliated with Mi
 ### Our contributors
 
 #### Eugene Tolmachev
-[![et1975](https://avatars3.githubusercontent.com/u/623703?v=3&s=64){:class="img-thumbnail"}](https://github.com/et1975) Eugene  has been programming professionally for over 20 years and unprofessionally even longer.
+[![et1975](https://avatars3.githubusercontent.com/u/623703?v=3&s=64){:class="img-thumbnail"}](https://github.com/et1975) Eugene has been programming professionally for over 20 years and unprofessionally even longer. With a lot of help from others he runs [F#unctional Toronto](https://www.meetup.com/FSharp-Toronto/) meetup.
 
 <br />
 
 #### Justin Sacks
 [![2sComplement](https://avatars0.githubusercontent.com/u/13887634?v=3&s=64){:class="img-thumbnail"}](https://github.com/2sComplement) Justin has been working at Prolucid since 2013 and has worked on everything from user interfaces for Smart Grid applications, to building an embedded and distributed communication framework, to implementing full-stack cloud and IoT systems.
-
 
 
 #### Scott Shingler
