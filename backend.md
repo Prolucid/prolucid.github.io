@@ -13,3 +13,7 @@ permalink: /backend/
 ### For accessing Apache Cassandra with F&#35;
 
 * [Functional client API](https://prolucid.github.io/FsCassy)
+
+### For streaming over RabbitMQ
+
+* [F# API](https://prolucid.github.io/FsBunny)

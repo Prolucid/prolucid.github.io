@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "F# API for event streaming over RabbitMQ"
+date:   2017-05-06 10:15:21 -0400
+categories: F# RabbitMQ event-streaming
+---
+
+Today we're releasing the first beta of FsBunny - F# API for event streaming over RabbitMQ.
+
+The library is a second foundation piece for building highly scalable event-driven systems in F&#35;.
+The core idea is that while there are many streams carrying many messages, potentially using variety of serializers, each stream is dedicated to a single type of message serialized using specific serializer. 
+
+With that out of the way we can start building processing topologies, next stop: FsShelter spouts for FsBunny streams!
+
+Please [check it out](https://prolucid.github.io/FsBunny) and let us know what you think!
