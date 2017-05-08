@@ -29,6 +29,10 @@ h1,h2,h3,h4,h5,h6 .wrapper {
     text-decoration: none!important;
 }
 
+@media screen and (max-width: 600px) { 
+    .site-nav { background-color: rgba(black, 0.3); }
+}
+
 .site-nav {
     .page-link {
         color: #FFFFFF;
