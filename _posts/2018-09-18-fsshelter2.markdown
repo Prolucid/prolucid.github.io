@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "FsShelter 2.0 is out!"
+date:   2018-09-18 10:15:21 -0400
+categories: F# FsShelter FsShelter.Extras FsBunny
+---
+
+Just in time for [open fsharp](https://twitter.com/openfsharp) a new major release of libraries supporting our event-stream processing is out and is [available on nuget](https://www.nuget.org/packages?q=FsShelter). This release focused on lowering footprint of self-hosted topologies and introduces several breaking changes in core APIs.
+Please see the documentation for details and instructions for migration from v1.x.
